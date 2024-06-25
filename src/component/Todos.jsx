@@ -7,7 +7,6 @@ function Todos() {
 
   return (
     <>
-      {/* <div></div> */}
       <ul className="list-none">
         {todos.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />

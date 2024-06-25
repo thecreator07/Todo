@@ -14,6 +14,7 @@ export const todoSlice = createSlice({
                 title: action.payload
             }
             state.todos.push(todo)
+            state.todos.sort((a, b) => (a.iscomplete === b.iscomplete ? 0 : a.iscomplete ? -1 : 1));
         },
 
         removeTodo: (state, action) => {
@@ -32,6 +33,8 @@ export const todoSlice = createSlice({
 
             if (iscompletedtask) {
                 iscompletedtask.iscomplete = iscompletedtask.iscomplete === true ? false : true;
+                state.todos.sort((a, b) => (a.iscomplete === b.iscomplete ? 0 : a.iscomplete ? -1 : 1));
+
             }
         }
     }
